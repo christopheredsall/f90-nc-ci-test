@@ -2,7 +2,7 @@ addons:
   apt:
     packages:
     - gfortran
-    - libnetcdff-dev
+    - libnetcdf-dev
 language: c
 script: make && make test
 
