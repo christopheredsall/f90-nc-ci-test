@@ -1,0 +1,5 @@
+# Ignore all opbject files
+*.o
+# Ignore the built executable
+nchello
+
