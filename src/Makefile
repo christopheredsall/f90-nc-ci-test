@@ -7,7 +7,13 @@
 NCLAGS=$(shell nf-config --fflags)
 NCLIBS=$(shell nf-config --flibs)
 
-FFLAGS=$(NCFLAGS) -I/usr/lib64/gfortran/modules 
+ifndef TRAVIS
+    EXTRAINCLUDE=-I/usr/lib64/gfortran/modules
+else
+    EXTRAINCLUDE=
+endif
+
+FFLAGS=$(NCFLAGS) $(EXTRAINCLUDE)
 LDLIBS=$(NCLIBS)
 
 FC=gfortran
