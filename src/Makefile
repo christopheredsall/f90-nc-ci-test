@@ -4,13 +4,14 @@
 % : %.o
 	$(FC) $(LDFLAGS) $(LDLIBS) $< -o $@
 
-NCLAGS=$(shell nf-config --fflags)
-NCLIBS=$(shell nf-config --flibs)
-
 ifndef TRAVIS
     EXTRAINCLUDE=-I/usr/lib64/gfortran/modules
+    NCLAGS=$(shell nf-config --fflags)
+    NCLIBS=$(shell nf-config --flibs)
 else
     EXTRAINCLUDE=-I/usr/include 
+    NCFLAGS=-I/usr/include
+    NCLIBS=-lnetcdff 
 endif
 
 FFLAGS=$(NCFLAGS) $(EXTRAINCLUDE)
