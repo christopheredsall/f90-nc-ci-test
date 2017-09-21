@@ -4,5 +4,5 @@ addons:
     - gfortran
     - libnetcdf-dev
 language: c
-script: make && make test
+script: cd src && make && make test
 
