@@ -1,6 +1,8 @@
-before_install:
-- sudo apt-get update -qq
-- sudo apt-get install -qq gfortran libnetcdff-dev
+addons:
+  apt:
+    packages:
+    - gfortran
+    - libnetcdff-dev
 language: c
 script: make && make test
 
