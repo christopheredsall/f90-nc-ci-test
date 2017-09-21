@@ -10,7 +10,7 @@ NCLIBS=$(shell nf-config --flibs)
 ifndef TRAVIS
     EXTRAINCLUDE=-I/usr/lib64/gfortran/modules
 else
-    EXTRAINCLUDE=
+    EXTRAINCLUDE=-I/usr/include 
 endif
 
 FFLAGS=$(NCFLAGS) $(EXTRAINCLUDE)
