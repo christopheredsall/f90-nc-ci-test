@@ -2,7 +2,7 @@
 	$(FC) $(FFLAGS) -c $< -o $@
 
 % : %.o
-	$(FC) $(LDFLAGS) $(LDLIBS) $< -o $@
+	$(FC) $< $(LDFLAGS) $(LDLIBS) -o $@
 
 ifndef TRAVIS
     EXTRAINCLUDE=-I/usr/lib64/gfortran/modules
